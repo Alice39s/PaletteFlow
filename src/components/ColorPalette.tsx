@@ -1,5 +1,7 @@
+import { useCallback } from 'react';
 import { useColorPalette } from '../hooks/useColorPalette';
 import { ColorFamilyCard } from './ColorFamilyCard';
+import { ColorNav } from './ColorNav';
 import { initialColors } from '../utils/initialColors';
 import { SHADE_CONFIG } from '../consts';
 
@@ -14,8 +16,15 @@ export default function ColorPalette() {
         updateGlobalShadeCount,
     } = useColorPalette(initialColors);
 
+    const handleNavigate = useCallback((familyName: string) => {
+        const element = document.getElementById(`color-family-${familyName}`);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }, []);
+
     return (
-        <div className="w-full py-8 max-w-[2000px] mx-auto">
+        <div className="w-full py-8 mx-auto max-w-full">
             <div className="mb-8 px-4 flex flex-col md:flex-row justify-between items-center gap-4">
                 <div className="flex items-center gap-4 w-full">
                     <input
@@ -44,17 +53,20 @@ export default function ColorPalette() {
                 </select>
             </div>
 
-            <div className="px-4 grid gap-6">
+            <div className="px-4 grid gap-8">
                 {colorFamilies.map((family) => (
-                    <ColorFamilyCard
-                        key={family.name}
-                        family={family}
-                        colorFormat={colorFormat}
-                        handleCopy={handleCopy}
-                        handleCopyAll={handleCopyAll}
-                    />
+                    <div key={family.name} id={`color-family-${family.name}`}>
+                        <ColorFamilyCard
+                            family={family}
+                            colorFormat={colorFormat}
+                            handleCopy={handleCopy}
+                            handleCopyAll={handleCopyAll}
+                        />
+                    </div>
                 ))}
             </div>
+
+            <ColorNav families={colorFamilies} onSelect={handleNavigate} />
         </div>
     );
 }

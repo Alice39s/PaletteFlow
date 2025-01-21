@@ -13,6 +13,7 @@ export interface ColorFamily {
     shades: ColorShade[];
     baseHsl: [number, number, number];
     shadeCount: number;
+    baseColor: string;
 }
 
 export const validateShadeCount = (count: number): number => {

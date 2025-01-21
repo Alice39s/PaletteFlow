@@ -12,7 +12,8 @@ export function ColorFamilyCard({ family, colorFormat, handleCopy, handleCopyAll
   return (
     <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
-        <div>
+        <div className="flex items-center gap-2">
+          <div className="w-4 h-4 rounded-full" style={{ backgroundColor: family.baseColor }} />
           <h2 className="text-xl font-semibold text-gray-900 dark:text-white">{family.name}</h2>
         </div>
         <button
@@ -24,7 +25,7 @@ export function ColorFamilyCard({ family, colorFormat, handleCopy, handleCopyAll
         </button>
       </div>
       <div className="relative">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-10 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-2">
           {family.shades.map((shade, index) => (
             <div
               key={`${family.name}-${shade.name}-${index}`}
