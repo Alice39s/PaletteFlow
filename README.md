@@ -78,11 +78,20 @@ src/
 
 ## 🤝 贡献指南
 
+### 🧑🏻‍💻 贡献代码
+
 1. Fork 本仓库
 2. 创建特性分支：`git checkout -b feature/AmazingFeature`
 3. 提交改动：`git commit -m 'Add some AmazingFeature'`
 4. 推送分支：`git push origin feature/AmazingFeature`
 5. 提交 Pull Request
+
+### 📝 贡献配色方案
+
+1. 参考上一节，创建配色方案分支
+2. 在 `src/utils/initialColors.ts` 中添加 `配色方案`
+3. 在 `src/consts/index.ts` 中添加配色方案的 `分类`
+4. 提交 Pull Request
 
 ## 📄 开源协议
 
