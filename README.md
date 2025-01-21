@@ -88,10 +88,32 @@ src/
 
 ### 📝 贡献配色方案
 
+- Issue 贡献
+
+在 [Issue](https://github.com/Alice39s/PaletteFlow/issues) 中提出配色方案。
+
+- 直接贡献
+
 1. 参考上一节，创建配色方案分支
-2. 在 `src/utils/initialColors.ts` 中添加 `配色方案`
-3. 在 `src/consts/index.ts` 中添加配色方案的 `分类`
+2. 在 `src/consts/colors.ts` 中添加配色方案的颜色
+3. 在 `src/consts/index.ts` 中添加配色方案的分类，请确保在 `x色系` 和 `x色调` 中都包含该配色方案
 4. 提交 Pull Request
+
+#### 配色方案格式
+
+- `./src/consts/colors.ts`
+- `name`: 配色方案名称
+- `baseHsl`: 配色方案的 HSL 值，可以使用 [Color Convert](https://rubenvar.github.io/bulk-color-converter/) 进行转换
+- `baseColor`: 配色方案的 16 进制颜色值 (请使用 `#` 开头)
+
+```typescript
+...
+{
+    name: '配色方案名称',
+    baseHsl: [h, s, l],
+    baseColor: '#颜色值'
+},
+```
 
 ## 📄 开源协议
 
