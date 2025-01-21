@@ -44,5 +44,7 @@ export const TOAST_CONFIG = {
 
 // Local Storage 键名
 export const STORAGE_KEYS = {
-    THEME: 'paletteflow-theme',
+    THEME: 'theme',
+    SHADE_COUNT: 'shade-count',
+    LAST_SELECTED_FAMILY: 'last-selected-family'
 } as const; 
