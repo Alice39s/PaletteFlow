@@ -1,7 +1,7 @@
 // 色阶配置
 export const SHADE_CONFIG = {
-    MIN_COUNT: 12,
-    MAX_COUNT: 40,
+    MIN_COUNT: 16,
+    MAX_COUNT: 56,
     MIN_LIGHTNESS: 8,
     MAX_LIGHTNESS: 92,
     MIN_SATURATION_FACTOR: 0.7,
